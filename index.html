@@ -5,43 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jawaharlal G – Portfolio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
     <style>
-        /* Reset & typography */
+        /* Reset & basics */
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
             color: #333;
+            line-height: 1.6;
         }
 
         h1,
-        h2 {
+        h2,
+        h3 {
             font-family: 'Montserrat', sans-serif;
             margin-bottom: 15px;
             color: #222;
         }
 
         a {
-            color: #0066cc;
             text-decoration: none;
+            color: inherit;
         }
 
         ul {
             list-style: none;
-            padding: 0;
-        }
-
-        section {
-            padding: 100px 20px 60px;
-            max-width: 900px;
-            margin: auto;
         }
 
         html {
@@ -50,36 +44,32 @@
 
         /* Header */
         header {
-            background: #f8f9fa;
-            padding: 15px 30px;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 30px;
         }
 
         .header-content {
+            max-width: 1100px;
+            margin: auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
         }
 
-        header h1 {
-            margin: 0;
+        .title h1 {
             font-size: 1.5em;
         }
 
         .role {
             font-size: 0.9em;
             color: #555;
-        }
-
-        .contact-info span {
-            margin-right: 15px;
-            font-size: 0.85em;
         }
 
         nav ul {
@@ -89,9 +79,10 @@
         }
 
         nav ul li a {
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 4px;
             font-size: 0.9em;
+            transition: all .3s;
         }
 
         nav ul li a:hover,
@@ -100,7 +91,6 @@
             color: #fff;
         }
 
-        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -115,54 +105,92 @@
         }
 
         /* Sections */
-        section h2 {
-            border-bottom: 2px solid #0066cc;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+        main {
+            margin-top: 90px;
         }
 
-        section ul li {
-            margin-bottom: 10px;
+        section {
+            padding: 70px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0066cc;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .skill {
+            background: #eef;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        /* Experience cards */
+        .card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
         }
 
         blockquote {
             background: #eef;
             border-left: 4px solid #0066cc;
+            padding: 15px 20px;
             margin: 20px 0;
-            padding: 10px 20px;
+            border-radius: 4px;
         }
 
         .quote-source {
             text-align: right;
             font-style: italic;
-            margin-right: 10px;
+            color: #555;
         }
 
-        /* Contact */
-        #contact-form input,
-        #contact-form textarea {
+        /* Contact form */
+        form input,
+        form textarea {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
+            padding: 10px;
+            margin: 8px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
 
-        #contact-form button {
-            margin-top: 10px;
-            padding: 10px 20px;
+        form button {
             background: #0066cc;
             color: #fff;
             border: none;
+            padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background: #005bb5;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background: #f8f9fa;
+            background: #f0f0f0;
         }
 
         .download-btn {
@@ -171,6 +199,7 @@
             background: #0066cc;
             color: #fff;
             border-radius: 4px;
+            transition: .3s;
         }
 
         .download-btn:hover {
@@ -178,12 +207,12 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media(max-width:768px) {
             nav ul {
-                flex-direction: column;
-                background: #f8f9fa;
-                width: 100%;
                 display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #fff;
             }
 
             nav ul.show {
@@ -200,14 +229,9 @@
 <body>
     <header>
         <div class="header-content">
-            <div>
+            <div class="title">
                 <h1>Jawaharlal G</h1>
                 <p class="role">Systems Engineer | TCS</p>
-                <div class="contact-info">
-                    <span>📞 +91 86089 64241</span>
-                    <span>✉️ <a href="mailto:jawaharlal.g11@gmail.com">jawaharlal.g11@gmail.com</a></span>
-                    <span>🔗 <a href="https://linkedin.com/in/jawaharlalg1112" target="_blank">LinkedIn</a></span>
-                </div>
             </div>
             <nav>
                 <ul>
@@ -232,18 +256,20 @@
                 infrastructure. Skilled in Linux administration, CI/CD pipeline design, automation, and incident/change
                 management.</p>
         </section>
+
         <section id="skills">
             <h2>Skills</h2>
-            <ul>
-                <li>AWS (EC2, S3, VPC, IAM, CloudWatch)</li>
-                <li>Linux (RHEL, Ubuntu, CentOS)</li>
-                <li>CI/CD (Jenkins, GitHub, Ansible, Terraform)</li>
-                <li>Containers (Docker, Kubernetes basics)</li>
-                <li>Scripting (Bash, AWS CLI)</li>
-                <li>Monitoring (Prometheus basics)</li>
-                <li>Networking & Security (VPC design, patch mgmt)</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill">AWS (EC2, S3, VPC, IAM, CloudWatch)</div>
+                <div class="skill">Linux (RHEL, Ubuntu, CentOS)</div>
+                <div class="skill">CI/CD (Jenkins, GitHub, Ansible, Terraform)</div>
+                <div class="skill">Containers (Docker, Kubernetes basics)</div>
+                <div class="skill">Scripting (Bash, AWS CLI)</div>
+                <div class="skill">Monitoring (Prometheus basics)</div>
+                <div class="skill">Networking & Security</div>
+            </div>
         </section>
+
         <section id="certifications">
             <h2>Certifications</h2>
             <ul>
@@ -256,19 +282,22 @@
 
         <section id="experience">
             <h2>Experience</h2>
-            <p><strong>Systems Engineer | TCS (Dec 2021 – Present)</strong></p>
-            <ul>
-                <li>Managed patching on 5000+ RHEL servers, reducing manual effort by 30%.</li>
-                <li>Supported Release Lifecycle Management and incident/change processes.</li>
-                <li>Improved uptime to 99.9% by root-cause analysis and permanent fixes.</li>
-                <li>Provided L1 support and collaborated with Dev & QA teams.</li>
-            </ul>
+            <div class="card">
+                <h3>Systems Engineer | TCS (Dec 2021 – Present)</h3>
+                <ul>
+                    <li>Managed patching on 5000+ RHEL servers, reducing manual effort by 30%.</li>
+                    <li>Supported Release Lifecycle Management and incident/change processes.</li>
+                    <li>Improved uptime to 99.9% with root-cause analysis and permanent fixes.</li>
+                    <li>Provided L1 support and collaborated with Dev & QA teams.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="education">
             <h2>Education</h2>
-            <p>B.Tech in Mechanical Engineering, Sri Manakula Vinayagar Engineering College (Pondicherry University)</p>
-            <p>CGPA: 8.03 | 2017–2021</p>
+            <p><strong>B.Tech Mechanical Engineering</strong><br>
+                Sri Manakula Vinayagar Engineering College, Pondicherry University<br>
+                CGPA: 8.03 | 2017–2021</p>
         </section>
 
         <section id="achievements">
@@ -294,37 +323,36 @@
             <h2>Contact</h2>
             <p>Email: <a href="mailto:jawaharlal.g11@gmail.com">jawaharlal.g11@gmail.com</a> | Phone: +91 86089 64241
             </p>
-            <form id="contact-form">
-                <label>Name:<br><input type="text" name="name" required></label><br><br>
-                <label>Email:<br><input type="email" name="email" required></label><br><br>
-                <label>Message:<br><textarea name="message" rows="5" required></textarea></label><br><br>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <a href="Jawaharlal G .pdf" class="download-btn" download>Download Resume</a>
+        <a href="JawaharlalG_Resume.pdf" class="download-btn" download>Download Resume</a>
     </footer>
 
     <script>
         // Mobile nav toggle
-        const nav = document.querySelector('nav ul');
         const burger = document.querySelector('.hamburger');
+        const nav = document.querySelector('nav ul');
         burger.addEventListener('click', () => nav.classList.toggle('show'));
 
-        // Highlight active nav link
+        // Active nav highlight
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('nav ul li a');
         window.addEventListener('scroll', () => {
             let current = "";
             sections.forEach(sec => {
-                const top = sec.offsetTop - 120;
-                if (scrollY >= top) current = sec.id;
+                if (pageYOffset >= sec.offsetTop - 120) { current = sec.id; }
             });
             navLinks.forEach(a => {
                 a.classList.remove('active');
-                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+                if (a.getAttribute('href') === '#' + current) { a.classList.add('active'); }
             });
         });
     </script>

@@ -4,22 +4,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jawaharlal G – Systems Engineer, TCS</title>
-    <!-- Google Fonts and CSS -->
+    <title>Jawaharlal G – Portfolio</title>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset & typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        section {
+            padding: 100px 20px 60px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .role {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .contact-info span {
+            margin-right: 15px;
+            font-size: 0.85em;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: #0066cc;
+            color: #fff;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 4px 0;
+        }
+
+        /* Sections */
+        section h2 {
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        section ul li {
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            background: #eef;
+            border-left: 4px solid #0066cc;
+            margin: 20px 0;
+            padding: 10px 20px;
+        }
+
+        .quote-source {
+            text-align: right;
+            font-style: italic;
+            margin-right: 10px;
+        }
+
+        /* Contact */
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #contact-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0066cc;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .download-btn:hover {
+            background: #005bb5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                background: #f8f9fa;
+                width: 100%;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header with name, role, contacts, and navigation -->
     <header>
         <div class="header-content">
-            <div class="header-left">
+            <div>
                 <h1>Jawaharlal G</h1>
                 <p class="role">Systems Engineer | TCS</p>
                 <div class="contact-info">
-                    <span>📞 +91-8608964241</span>
-                    <span>✉️ <a href="mailto:jawaharlal.g11@gmail.com.com">jawaharlal.g11@gmail.com</a></span>
+                    <span>📞 +91 86089 64241</span>
+                    <span>✉️ <a href="mailto:jawaharlal.g11@gmail.com">jawaharlal.g11@gmail.com</a></span>
                     <span>🔗 <a href="https://linkedin.com/in/jawaharlalg1112" target="_blank">LinkedIn</a></span>
                 </div>
             </div>
@@ -28,102 +214,120 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#projects">Projects & Experience</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <!-- Hamburger icon for mobile nav toggle -->
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
         </div>
     </header>
 
     <main>
         <section id="about">
             <h2>About</h2>
-            <p><strong>Career Objective:</strong> AWS/Linux DevOps Engineer with 3+ years of hands-on experience architecting, deploying, and maintaining cloudbased
-            infrastructure. Adept at Linux administration, automation using scripting and configuration management tools,
-            CI/CD pipeline design, and incident/change management. Passionate about optimizing system reliability and accelerating
-            deployment velocity.
-            </p>
+            <p>AWS/Linux DevOps Engineer with 3+ years of experience architecting, deploying, and maintaining cloud
+                infrastructure. Skilled in Linux administration, CI/CD pipeline design, automation, and incident/change
+                management.</p>
         </section>
-
         <section id="skills">
             <h2>Skills</h2>
             <ul>
-                <li>AWS Cloud (EC2, S3, Lambda, CloudFormation)</li>
-                <li>Linux & Shell Scripting</li>
-                <li>DevOps & CI/CD (Jenkins, GitLab CI/CD)</li>
-                <li>Containers & Orchestration (Docker, Kubernetes)</li>
-                <li>Monitoring & Logging (Prometheus, ELK Stack)</li>
+                <li>AWS (EC2, S3, VPC, IAM, CloudWatch)</li>
+                <li>Linux (RHEL, Ubuntu, CentOS)</li>
+                <li>CI/CD (Jenkins, GitHub, Ansible, Terraform)</li>
+                <li>Containers (Docker, Kubernetes basics)</li>
+                <li>Scripting (Bash, AWS CLI)</li>
+                <li>Monitoring (Prometheus basics)</li>
+                <li>Networking & Security (VPC design, patch mgmt)</li>
             </ul>
         </section>
-
         <section id="certifications">
             <h2>Certifications</h2>
             <ul>
                 <li>AWS Certified Cloud Practitioner</li>
-                <!-- Add other relevant certifications -->
+                <li>AWS Cloud Quest: Cloud Practitioner</li>
+                <li>AWS Educate: Introduction to Cloud 101</li>
+                <li>CI/CD Beginner – Udemy</li>
             </ul>
         </section>
 
-        <section id="projects">
-            <h2>Projects & Experience</h2>
-            <p><strong>Systems Engineer, Tata Consultancy Services (TCS)</strong></p>
+        <section id="experience">
+            <h2>Experience</h2>
+            <p><strong>Systems Engineer | TCS (Dec 2021 – Present)</strong></p>
             <ul>
-                <li>Developed and maintained AWS infrastructure, improving deployment efficiency.</li>
-                <li>Implemented automated CI/CD pipelines using Jenkins and GitLab.</li>
-                <li>Containerized applications with Docker & Kubernetes to enhance scalability.</li>
-                <li>Monitored systems with Prometheus and the ELK stack to ensure high availability.</li>
+                <li>Managed patching on 5000+ RHEL servers, reducing manual effort by 30%.</li>
+                <li>Supported Release Lifecycle Management and incident/change processes.</li>
+                <li>Improved uptime to 99.9% by root-cause analysis and permanent fixes.</li>
+                <li>Provided L1 support and collaborated with Dev & QA teams.</li>
             </ul>
         </section>
 
         <section id="education">
             <h2>Education</h2>
-            <p>Bachelor of Engineering in Computer Science, XYZ University</p>
-            <p>CGPA: 8.7 / 10</p>
+            <p>B.Tech in Mechanical Engineering, Sri Manakula Vinayagar Engineering College (Pondicherry University)</p>
+            <p>CGPA: 8.03 | 2017–2021</p>
         </section>
 
         <section id="achievements">
             <h2>Achievements</h2>
             <ul>
-                <li>“Excellence in Innovation” Award at TCS (2024)</li>
-                <li>University Topper and Dean’s List (Year)</li>
-                <li>Winner, College Hackathon on Cloud Automation (2023)</li>
+                <li>On the Spot Award (Team)</li>
+                <li>Star of the Month Award</li>
+                <li>Appreciation Note for DevOps contributions</li>
+                <li>Service & Commitment Award from Global HR</li>
             </ul>
         </section>
 
         <section id="testimonials">
             <h2>Testimonials</h2>
             <blockquote>
-                <p>"Jawaharlal is a dedicated and highly skilled engineer. His expertise in cloud infrastructure and
-                    DevOps has significantly contributed to our project's success."</p>
+                "Jawahar stands out for his remarkable ability to learn new technologies rapidly, excellent
+                communication skills, and collaborative spirit."
             </blockquote>
-            <p class="quote-source">— Durga Shankari, Project Manager, TCS</p>
+            <p class="quote-source">– Durga Shankari, Project Manager, TCS</p>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:jawaharlal@example.com">jawaharlal@example.com</a> | Phone: +91-XXXXXXXXXX</p>
+            <p>Email: <a href="mailto:jawaharlal.g11@gmail.com">jawaharlal.g11@gmail.com</a> | Phone: +91 86089 64241
+            </p>
             <form id="contact-form">
-                <label>Name:<br><input type="text" name="name" required></label><br>
-                <label>Email:<br><input type="email" name="email" required></label><br>
-                <label>Message:<br><textarea name="message" rows="5" required></textarea></label><br>
-                <button type="submit">Send Message</button>
+                <label>Name:<br><input type="text" name="name" required></label><br><br>
+                <label>Email:<br><input type="email" name="email" required></label><br><br>
+                <label>Message:<br><textarea name="message" rows="5" required></textarea></label><br><br>
+                <button type="submit">Send</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <a href="Jawaharlal G .pdf" class="btn download-btn" download>Download Resume</a>
+        <a href="Jawaharlal G .pdf" class="download-btn" download>Download Resume</a>
     </footer>
 
-    <!-- JavaScript file for mobile menu and smooth scroll -->
-    <script src="script.js"></script>
+    <script>
+        // Mobile nav toggle
+        const nav = document.querySelector('nav ul');
+        const burger = document.querySelector('.hamburger');
+        burger.addEventListener('click', () => nav.classList.toggle('show'));
+
+        // Highlight active nav link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        window.addEventListener('scroll', () => {
+            let current = "";
+            sections.forEach(sec => {
+                const top = sec.offsetTop - 120;
+                if (scrollY >= top) current = sec.id;
+            });
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
